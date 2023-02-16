@@ -1,0 +1,82 @@
+<h1>Photo Details</h1>
+
+<dl>
+  <dt>Image</dt>
+  <dd>
+    <img src="<%= @the_photo.image %>">
+  </dd>
+
+  <dt>Caption</dt>
+  <dd>
+    <p><%= @the_photo.caption %></p>
+  </dd>
+
+  <dt>Owner</dt>
+  <dd>
+    <%= @the_photo.poster.username %>
+  </dd>
+
+  <dt>Posted</dt>
+  <dd>
+    <%= @the_photo.created_at %>
+  </dd>
+
+  <dt>Edit photo</dt>
+  <dd>
+    <form action="/update_photo/785">
+      <label for="browser_image">Image</label>
+      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="https://robohash.org/modieumvoluptate.png?size=300x300&amp;set=set1">
+
+      <label for="browser_caption">Caption</label>
+      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo...">When the snows fall and the white winds blow, the lone wolf dies but the pack survives.</textarea>
+
+      <button>Update photo</button>
+    </form>
+  </dd>
+
+  <dt>Delete photo</dt>
+  <dd>
+    <a href="/delete_photo/<%= @the_photo.id %>;">
+      Delete this photo
+    </a>
+  </dd>
+</dl>
+
+<h2>Comments</h2>
+
+<table>
+  <tr>
+    <th>Commenter</th>
+    <th>Comment</th>
+    <th>Posted</th>
+  </tr>
+
+  <tr>
+    <td>
+      thad
+    </td>
+
+    <td>
+      The secret to humor is surprise.
+    </td>
+
+    <td>
+      2019-04-27 16:24:50 UTC
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      trey
+    </td>
+
+    <td>
+      It is impossible to begin to learn that which one thinks one already knows.
+    </td>
+
+    <td>
+      2019-04-28 21:18:45 UTC
+    </td>
+  </tr>
+	<%# end %>
+</table>
